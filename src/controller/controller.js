@@ -6,3 +6,10 @@ const controller = {};
 controller.inicio = (req,res) => {
     res.render('index.html');
 }
+
+
+
+
+
+
+module.exports = controller;

@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const puerto = 3000;
+const puerto = 5000;
 //Módulo para juntar palabras y construir una ruta.
 const path = require('path'); 
 //Extrae información de la solicitud entrante.              
@@ -17,7 +17,7 @@ app.set('view engine','ejs');
 
 
 //Routes
-app.use(require(path.join(__dirname,'/src/routes')));
+app.use(require(path.join(__dirname,'/src/routes/route')));
 
 
 
