@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
-    <%- include('partials/navbar.html') %>
-    
-    
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-    
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <%- include('partials/navbar.html') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                  
+                    <% for(var i=0; i< Productos.length; i++) {%>
+                      <div class="card">
+                        <img
+                        src="https://www.alkosto.com/medias/194252429945-001-1400Wx1400H?context=bWFzdGVyfGltYWdlc3wyMTU4Njd8aW1hZ2UvanBlZ3xpbWFnZXMvaDJiL2hhYy8xMDQ5OTU5MDAyOTM0Mi5qcGd8Y2I0MTE3MGNmZGIyNTUzMDFmNTdkMTczYjUwOGZiMjFjMzcyMjk4ZmYzZWZlNWY0MGU0MDExNTUzOTA1ZjJmZA"
+                        class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%=Productos[i].nombre%></h5>
+                          <p class="card-text"><%=Productos[i].descripcion%></p>
+                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                      </div>
+                      <% } %>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+        </div>
       </div>
     </div>
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-      <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-      <div class="d-flex gap-2 w-100 justify-content-between">
-        <div>
-          <h6 class="mb-0">Third heading</h6>
-          <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-        </div>
-        <small class="opacity-50 text-nowrap">1w</small>
-      </div>
-    </a>
-
 </body>
+
 </html>
