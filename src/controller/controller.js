@@ -4,9 +4,9 @@ const controller = {};
 let Productosx = [];
 var Descripcion = " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, illo? Aliquam nisi repellat, nesciunt illum odit eos repellendus natus itaque eligendi eaque dignissimos sapiente officiis? Rem molestiae eum asperiores blanditiis."  
 // Imagen: url1,
-Productosx.push({nombre:"Iphone 12",descripcion:Descripcion,Numero:1});
-Productosx.push({nombre:"Iphone 11",descripcion:Descripcion,Numero:2});
-Productosx.push({nombre:"Iphone 10",descripcion:Descripcion,Numero:3});
+Productosx.push({nombre:"Iphone 12",descripcion:Descripcion,Cantidad:10,Numero:1});
+Productosx.push({nombre:"Iphone 11",descripcion:Descripcion,Cantidad:10,Numero:2});
+Productosx.push({nombre:"Iphone 10",descripcion:Descripcion,Cantidad:10,Numero:3});
 
 controller.inicio = (req,res) => {
     // Productosx = require('../controller/controller')
@@ -18,8 +18,11 @@ controller.stock = (req,res) => {
 }
 controller.poststock = (req,res) => {
     // Productosx = require('../controller/controller')
-    console.log(req.body.cantidad)
-    res.render('Stock.html', {Productos:Productosx});
+    CantidadAsignada_ = req.body.cantidad 
+    for (let index = 0; index < Productosx.length; index++) {
+        Productosx[index].Cantidad = Number(Productosx[index].Cantidad) + Number(CantidadAsignada_[index]);
+    }
+    res.render('index.html', {Productos:Productosx});
 }
 // controller.senddatos = (req,res) => {
       
