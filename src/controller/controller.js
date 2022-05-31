@@ -24,15 +24,13 @@ controller.poststock = (req,res) => {
     }
     res.render('index.html', {Productos:Productosx});
 }
-// controller.senddatos = (req,res) => {
-      
-//     console.log(Productosx);
-//     module.exports = Productosx;
-//     res.render('index.html', { nume: Productosx});
-// }
-
-
-
-
-
+controller.comprar = (req,res) => {
+    // Productosx = require('../controller/controller')
+    CantidadAsignada_ = req.body.Cantidadcarrito 
+    // console.log(CantidadAsignada_)
+    for (let index = 0; index < Productosx.length; index++) {
+        Productosx[index].Cantidad = Number(Productosx[index].Cantidad) - Number(CantidadAsignada_[index]);
+    }
+    res.render('index.html', {Productos:Productosx});
+}
 module.exports = controller;
