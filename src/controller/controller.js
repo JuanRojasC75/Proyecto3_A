@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path'); 
 const controller = {};
 let Productosx = [];
-var Descripcion = " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, illo? Aliquam nisi repellat, nesciunt illum odit eos repellendus natus itaque eligendi eaque dignissimos sapiente officiis? Rem molestiae eum asperiores blanditiis."  
+var Descripcion = " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, illo? Aliquam nisi repellat."  
 // Imagen: url1,
 Productosx.push({nombre:"Iphone 12",descripcion:Descripcion,Cantidad:10,Numero:1});
 Productosx.push({nombre:"Iphone 11",descripcion:Descripcion,Cantidad:10,Numero:2});

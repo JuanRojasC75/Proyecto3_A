@@ -14,51 +14,31 @@
   <%- include('partials/navbar.html') %>
 
     <div class="container">
-      <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-          <form action="/Comprar" method="post">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>
-                    <% for(var i=0; i< Productos.length; i++) {%>
-                      <div class="card">
-                        <img
-                        src="https://www.alkosto.com/medias/194252429945-001-1400Wx1400H?context=bWFzdGVyfGltYWdlc3wyMTU4Njd8aW1hZ2UvanBlZ3xpbWFnZXMvaDJiL2hhYy8xMDQ5OTU5MDAyOTM0Mi5qcGd8Y2I0MTE3MGNmZGIyNTUzMDFmNTdkMTczYjUwOGZiMjFjMzcyMjk4ZmYzZWZlNWY0MGU0MDExNTUzOTA1ZjJmZA"
-                        class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title"><%=Productos[i].nombre%></h5>
-                          <p class="card-text"><%=Productos[i].descripcion%></p>
-                          <p class="card-text"> Disponible </p><p class="card-text"><%=Productos[i].Cantidad%></p>
-                          <p class="card-text"> Agregar al carrito </p>
-                          <input class="form-control form-control-sm" type="number" placeholder="Cantidadcarrito" aria-label="Cantidadcarrito" name = "Cantidadcarrito" id = "Cantidadcarrito"<%=Productos[i].Numero%>  value = 0>
-                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                      </div>
-                      <% } %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="contains">
-            <br>
-            <div class="contains"><input class="btn btn-primary" type="submit" href="/Comprar" value="Comprar"></div>
-            <br>
-        </div>
-        </form>
-        </div>
-        <div class="col">
-        </div>
+      <form action="/Comprar" method="post">
+      <div class="row mt-3">
+            <% for(var i=0; i< Productos.length; i++) {%>
+              <div class="col-4">
+              <div class="card">
+                <img 
+                src="https://www.alkosto.com/medias/194252429945-001-1400Wx1400H?context=bWFzdGVyfGltYWdlc3wyMTU4Njd8aW1hZ2UvanBlZ3xpbWFnZXMvaDJiL2hhYy8xMDQ5OTU5MDAyOTM0Mi5qcGd8Y2I0MTE3MGNmZGIyNTUzMDFmNTdkMTczYjUwOGZiMjFjMzcyMjk4ZmYzZWZlNWY0MGU0MDExNTUzOTA1ZjJmZA"
+                class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%=Productos[i].nombre%></h5>
+                  <p class="card-text"><%=Productos[i].descripcion%></p>
+                  <p class="card-text"> Disponible </p><p class="card-text"><%=Productos[i].Cantidad%></p>
+                  <p class="card-text"> Agregar al carrito </p>
+                  <input class="form-control form-control-sm" type="number" placeholder="Cantidadcarrito" aria-label="Cantidadcarrito" name = "Cantidadcarrito" id = "Cantidadcarrito"<%=Productos[i].Numero%>  value = 0>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+              <% } %>
+
       </div>
+      <div class="row justify-content-center mt-3">
+        <input class="btn btn-primary col-4" type="submit" href="/Comprar" value="Comprar">
+      </div>
+    </form>
     </div>
 </body>
 

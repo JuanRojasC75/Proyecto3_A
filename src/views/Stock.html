@@ -1,77 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
+
 <body>
-    <%- include('partials/navbar.html') %>
+  <%- include('partials/navbar.html') %>
     <form action="/" method="post">
-    <div class="container">
+      <div class="container">
         <div class="row">
-          <div class="col">
-          </div>
-          <div class="col">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>
-                    
-                      <% for(var i=0; i< Productos.length; i++) {%>
-                        <div class="card">
-                          <img
-                          src="https://www.alkosto.com/medias/194252429945-001-1400Wx1400H?context=bWFzdGVyfGltYWdlc3wyMTU4Njd8aW1hZ2UvanBlZ3xpbWFnZXMvaDJiL2hhYy8xMDQ5OTU5MDAyOTM0Mi5qcGd8Y2I0MTE3MGNmZGIyNTUzMDFmNTdkMTczYjUwOGZiMjFjMzcyMjk4ZmYzZWZlNWY0MGU0MDExNTUzOTA1ZjJmZA"
-                          class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title"><%=Productos[i].nombre%></h5>
-                            <p class="card-text"><%=Productos[i].descripcion%></p>
-                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                          </div>
-                          <br>
-                          <input class="form-control form-control-sm" type="number" placeholder="Cantidad" aria-label="Cantidad" name = "cantidad" id = "cantidad"<%=Productos[i].Numero%>  value = 0>
-                        </div>
-                        <% } %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                        </div>
-                        <div class="col">
-                            <div class="contains">
-                                <br>
-                                <div class="contains"><input class="btn btn-primary" type="submit" href="/" value="Enviar"></div>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="col">
-    
-                        </div>
-                    </div>
+
+          <% for(var i=0; i< Productos.length; i++) {%>
+            <div class="col-4">
+              <div class="card">
+                <img
+                  src="https://www.alkosto.com/medias/194252429945-001-1400Wx1400H?context=bWFzdGVyfGltYWdlc3wyMTU4Njd8aW1hZ2UvanBlZ3xpbWFnZXMvaDJiL2hhYy8xMDQ5OTU5MDAyOTM0Mi5qcGd8Y2I0MTE3MGNmZGIyNTUzMDFmNTdkMTczYjUwOGZiMjFjMzcyMjk4ZmYzZWZlNWY0MGU0MDExNTUzOTA1ZjJmZA"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%=Productos[i].nombre%>
+                  </h5>
+                  <p class="card-text">
+                    <%=Productos[i].descripcion%>
+                  </p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
-    
-    
-            </form>
-          </div>
-          <div class="col">
-          </div>
+                <br>
+                <input class="form-control form-control-sm" type="number" placeholder="Cantidad" aria-label="Cantidad"
+                  name="cantidad" id="cantidad" <%=Productos[i].Numero%> value = 0>
+              </div>
+            </div>
+            <% } %>
+
+        </div>
+
+        <div class="row justify-content-center my-3">
+
+          <input class="btn btn-primary col-4" type="submit" href="/" value="Enviar">
+
         </div>
       </div>
 
+
+    </form>
+    </div>
+    <div class="col">
+    </div>
+    </div>
+    </div>
+
 </body>
+
 </html>
