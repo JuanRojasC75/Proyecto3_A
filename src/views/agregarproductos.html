@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      
+      </head>
+<body>
+    <%- include('partials/navbar.html') %>
+    <!-- Navigation -->
+    <!-- Formulario -->
+    <form action="/agregarproductos" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <br>
+                    <h3 size=40> Registro de productos </h3>
+                    <div class="contains">
+                        <br>
+                        <input class="form-control form-control-sm" type="text" placeholder="Nombre del producto"
+                            aria-label="Nombre del producto" id="nom" name="nom">
+                        <br>
+                        <textarea class="form-control" id="desp" rows="3"
+                            aria-label="Descripcion del producto" id="desp" name="desp"></textarea>
+                        <br>
+                        <input class="form-control form-control-sm" type="number" placeholder="Cantidad" aria-label="Cantidad"
+                  name="cantidad" id="cantidad"value = 0>
+                        <br>
+                        <select class="form-select" aria-label="Default select example" id="img" name="img">
+                            <option value="1">iPhone 12 Pro 256 GB Azul pacífico</option>
+                            <option value="2">iPhone 13 Pro 128GB Azul Sierra </option>
+                            <option value="3">iPhone 13 Pro 1TB Verde Alpino</option>
+                          </select>
+                        <br>
+                        <!-- <label for="formFile" class="form-label">Seleccionar archivos</label>
+                        <input class="form-control" type="file" id="imgp" name="imgp">
+                        <br> -->
+                        <div class="contains"><input class="btn btn-primary" type="submit" href="/agregarproductos" value="Enviar"></div>
+                    </div>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>
