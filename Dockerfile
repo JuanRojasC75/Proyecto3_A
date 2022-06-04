@@ -9,6 +9,7 @@ RUN npm install
 #Copiar todos los archivos del proyecto
 COPY . .
 #Publicar puerto
- EXPOSE 5000 
+# EXPOSE 5000 Esta línea no se nesecita en HEROKU
+ #EXPOSE 5000 
  #Esta línea no se nesecita en HEROKU
 CMD [ "node", "index.js" ]

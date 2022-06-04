@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const puerto = 5000;
+const puerto = process.env.PORT;
 //Módulo para juntar palabras y construir una ruta.
 const path = require('path'); 
 //Extrae información de la solicitud entrante.              
@@ -11,7 +11,7 @@ app.use(express.static('static'));
 
 //Setttings
 app.set('port',puerto);
-app.set('views', path.join(__dirname,'/src/views'));
+app.set('views','/app/src/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine','ejs');
 
