@@ -14,35 +14,36 @@
 <body>
   <%- include('partials/navbar.html') %>
     <form action="/" method="post">
-      <div class="container">
-        <div class="row">
-
-          <% for(var i=0; i< Productos.length; i++) {%>
-            <div class="col-4">
-              <div class="card">
-                <img
-                  src=<%=Productos[i].Imagen%> class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <%=Productos[i].nombre%>
-                  </h5>
-                  <p class="card-text">
-                    <%=Productos[i].descripcion%>
-                  </p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-                <br>
+      <div class="container mt-5">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">item</th>
+              <th scope="col">imagen</th>
+              <th scope="col">nombre</th>
+              <th scope="col">stock</th>
+              <th scope="col">cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i< Productos.length; i++) {%>
+            <tr>
+              <th scope="row"><%=Productos[i].Numero%></th>
+              <td><img style="max-width: 7rem;" src= <%=Productos[i].Imagen%> ></td>
+              <td><%=Productos[i].nombre%></td>
+              <td><%=Productos[i].Cantidad%></td>
+              <td> 
                 <input class="form-control form-control-sm" type="number" placeholder="Cantidad" aria-label="Cantidad"
-                  name="cantidad" id="cantidad" <%=Productos[i].Numero%> value = 0>
-              </div>
-            </div>
+                name="cantidad" id="cantidad" <%=Productos[i].Numero%> value = 0>
+              </td>
+            </tr>
             <% } %>
-
-        </div>
+          </tbody>
+        </table>
 
         <div class="row justify-content-center my-3">
 
-          <input class="btn btn-primary col-4" type="submit" href="/" value="Enviar">
+          <input class="btn btn-outline-success col-4" type="submit" href="/" value="Enviar">
 
         </div>
       </div>

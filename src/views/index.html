@@ -13,30 +13,34 @@
 <body>
   <%- include('partials/navbar.html') %>
 
-    <div class="container">
+    <div class="container mt-5">
       <form action="/Comprar" method="post">
-      <div class="row mt-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">item</th>
+              <th scope="col">imagen</th>
+              <th scope="col">nombre</th>
+              <th scope="col">stock</th>
+              <th scope="col">cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
             <% for(var i=0; i< Productos.length; i++) {%>
-              <div class="col-4">
-              <div class="card mt-2">
-                <img style="max-width: 10rem ;"
-                src=<%=Productos[i].Imagen%>
-                class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><%=Productos[i].nombre%></h5>
-                  <p class="card-text"><%=Productos[i].descripcion%></p>
-                  <p class="card-text"> Disponible </p><p class="card-text"><%=Productos[i].Cantidad%></p>
-                  <p class="card-text"> Agregar al carrito </p>
-                  <input class="form-control form-control-sm" type="number" placeholder="Cantidadcarrito" aria-label="Cantidadcarrito" name = "Cantidadcarrito" id = "Cantidadcarrito"<%=Productos[i].Numero%>  value = 0>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div>
-            </div>
-              <% } %>
-
-      </div>
+            <tr>
+              <th scope="row"><%=Productos[i].Numero%></th>
+              <td><img style="max-width: 7rem;" src= <%=Productos[i].Imagen%> ></td>
+              <td><%=Productos[i].nombre%></td>
+              <td><%=Productos[i].Cantidad%></td>
+              <td> 
+                <input class="form-control form-control-sm" type="number" placeholder="Cantidadcarrito" aria-label="Cantidadcarrito" name = "Cantidadcarrito" id = "Cantidadcarrito"<%=Productos[i].Numero%>  value = 0>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
       <div class="row justify-content-center mt-3">
-        <input class="btn btn-primary col-4" type="submit" href="/Comprar" value="Comprar">
+        <input class="btn btn-outline-primary col-4" type="submit" href="/Comprar" value="Comprar">
       </div>
     </form>
     </div>
